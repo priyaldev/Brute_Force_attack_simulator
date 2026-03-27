@@ -23,6 +23,15 @@
 ## 6. Setup and Installation
 1. Clone this repository:
    ```bash
-   git clone [Your-Repository-Link]
+   git clone https://github.com/priyaldev/Brute_Force_attack_simulator.git
+
+   7. Future Scope
+## 7. Future Scope   
+
+* Multi-threading: Implementation of concurrent processing to increase cracking speed.
+
+* Complexity Analysis: Integration of a password entropy calculator to suggest stronger passwords.
+
+* Account Lockout Simulation: Adding defensive features like CAPTCHA or rate-limiting to show how attacks can be prevented.
 
    
