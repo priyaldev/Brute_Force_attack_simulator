@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Security Simulator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; padding-top: 50px; }
+        .card { border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 card p-4">
+                <h2 class="text-center mb-4">Brute Force Simulator</h2>
+                
+                <div class="mb-3">
+                    <label class="form-label">Target Password:</label>
+                    <input type="text" id="pwd" class="form-control" placeholder="e.g. abc1">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Attack Mode:</label>
+                    <select id="mode" class="form-select">
+                        <option value="brute">Pure Brute Force</option>
+                        <option value="dict">Dictionary Attack</option>
+                    </select>
+                </div>
+                
+                <button onclick="startAttack()" class="btn btn-danger w-100">Start Attack</button>
+                
+                <div id="result" class="text-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function startAttack() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "Attacking... ⏳";
+            resultDiv.className = "text-warning";
+
+            const response = await fetch('/crack', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    password: document.getElementById('pwd').value,
+                    mode: document.getElementById('mode').value
+                })
+            });
+
+            const data = await response.json();
+            
+            if (data.status === "success") {
+                resultDiv.innerHTML = `✅ ${data.message} <br> ⏱️ Time: ${data.time}`;
+                resultDiv.className = "text-success";
+            } else {
+                resultDiv.innerHTML = `❌ ${data.message}`;
+                resultDiv.className = "text-danger";
+            }
+        }
+    </script>
+</body>
+</html>
