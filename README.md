@@ -1,13 +1,13 @@
 # Brute Force Attack Simulation Tool
 
 ## 1. Problem Statement
-[cite_start]Many users are unaware of how brute force attacks can break weak passwords, making their accounts vulnerable to hacking[cite: 14]. [cite_start]This project addresses the lack of ethical hacking awareness by demonstrating how automated scripts can guess passwords[cite: 14].
+Many users are unaware of how brute force attacks can break weak passwords, making their accounts vulnerable to hacking. This project addresses the lack of ethical hacking awareness by demonstrating how automated scripts can guess passwords.
 
 ## 2. Project Objective
-[cite_start]The goal of this application is to educate users on password security by simulating real-world attack scenarios (Brute Force and Dictionary Attacks) in a controlled web environment[cite: 7, 14].
+The goal of this application is to educate users on password security by simulating real-world attack scenarios (Brute Force and Dictionary Attacks) in a controlled web environment.
 
 ## 3. Solution Description
-[cite_start]This is a web application built with **Flask (Python)** that demonstrates the difference between a systematic brute force generation and a wordlist-based dictionary attack[cite: 7]. [cite_start]It helps users visualize the time and effort required to crack various password lengths and complexities[cite: 37].
+This is a web application built with **Flask (Python)** that demonstrates the difference between a systematic brute force generation and a wordlist-based dictionary attack. It helps users visualize the time and effort required to crack various password lengths and complexities.
 
 ## 4. Features
 * **Pure Brute Force Mode:** Systematically generates character combinations to find a match.
@@ -24,8 +24,17 @@
 1. Clone this repository:
    ```bash
    git clone https://github.com/priyaldev/Brute_Force_attack_simulator.git
+2. Install dependencies:
 
-   7. Future Scope
+   ```bash
+   pip install Flask
+   Run the application:
+3. Run the application
+   ```bash
+   python app.py
+ Open your browser and navigate to http://127.0.0.1:5000
+
+  
 ## 7. Future Scope   
 
 * Multi-threading: Implementation of concurrent processing to increase cracking speed.
@@ -34,4 +43,6 @@
 
 * Account Lockout Simulation: Adding defensive features like CAPTCHA or rate-limiting to show how attacks can be prevented.
 
+
+Author: Priyal Jain
    
